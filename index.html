@@ -13,131 +13,225 @@
 
 <div class="app">
 
+    <!-- HEADER -->
     <header>
-        <h1>✦ Air Canvas</h1>
-        <p>Draw in the air with your hand</p>
+        <div class="title-row">
+            <div class="logo">✦</div>
+
+            <div>
+                <h1>Air Canvas</h1>
+                <p>Draw in the air with your hand</p>
+            </div>
+        </div>
     </header>
 
+
+    <!-- CANVAS AREA -->
     <main class="stage">
 
-        <video id="video" autoplay playsinline></video>
+        <video
+            id="video"
+            autoplay
+            playsinline>
+        </video>
 
         <canvas id="drawCanvas"></canvas>
         <canvas id="cursorCanvas"></canvas>
 
-        <div id="message">Starting camera...</div>
 
+        <!-- STATUS MESSAGE -->
+        <div id="message">
+            Starting camera...
+        </div>
+
+
+        <!-- HUD -->
         <div class="hud">
 
-            <div id="handStatus">
+            <div class="status-card" id="handStatus">
                 <span class="dot red"></span>
                 No Hand
             </div>
 
-            <div id="toolStatus">
+            <div class="status-card" id="toolStatus">
                 ✦ Pen
             </div>
 
+        </div>
+
+
+        <!-- TOP RIGHT -->
+        <div class="live-badge">
+            <span></span>
+            LIVE
         </div>
 
     </main>
 
 
-    <div class="controls">
+    <!-- CONTROLS -->
+    <section class="controls">
+
 
         <!-- COLORS -->
+        <div class="control-section">
 
-        <div class="palette">
+            <div class="section-title">
+                🎨 Colors
+            </div>
 
-            <button class="color active"
-                data-color="#ff3b30"
-                style="background:#ff3b30;"></button>
+            <div class="palette">
 
-            <button class="color"
-                data-color="#ff9500"
-                style="background:#ff9500;"></button>
+                <button
+                    class="color active"
+                    data-color="#ff3b30"
+                    style="background:#ff3b30;">
+                </button>
 
-            <button class="color"
-                data-color="#ffcc00"
-                style="background:#ffcc00;"></button>
+                <button
+                    class="color"
+                    data-color="#ff9500"
+                    style="background:#ff9500;">
+                </button>
 
-            <button class="color"
-                data-color="#34c759"
-                style="background:#34c759;"></button>
+                <button
+                    class="color"
+                    data-color="#ffcc00"
+                    style="background:#ffcc00;">
+                </button>
 
-            <button class="color"
-                data-color="#007aff"
-                style="background:#007aff;"></button>
+                <button
+                    class="color"
+                    data-color="#34c759"
+                    style="background:#34c759;">
+                </button>
 
-            <button class="color"
-                data-color="#af52de"
-                style="background:#af52de;"></button>
+                <button
+                    class="color"
+                    data-color="#007aff"
+                    style="background:#007aff;">
+                </button>
 
-            <button class="color"
-                data-color="#ff2d55"
-                style="background:#ff2d55;"></button>
+                <button
+                    class="color"
+                    data-color="#af52de"
+                    style="background:#af52de;">
+                </button>
 
-            <button class="color"
-                data-color="#ffffff"
-                style="background:#ffffff;"></button>
+                <button
+                    class="color"
+                    data-color="#ff2d55"
+                    style="background:#ff2d55;">
+                </button>
+
+                <button
+                    class="color"
+                    data-color="#ffffff"
+                    style="background:#ffffff;">
+                </button>
+
+            </div>
 
         </div>
 
 
         <!-- TOOLS -->
+        <div class="control-section">
 
-        <div class="tools">
+            <div class="section-title">
+                🖌️ Brush
+            </div>
 
-            <button id="penTool" class="tool active">
-                ✦ Pen
-            </button>
+            <div class="tools">
 
-            <button id="flowerTool" class="tool">
-                🌸 Flower
-            </button>
+                <button
+                    id="penTool"
+                    class="tool active">
+                    ✦ Pen
+                </button>
+
+                <button
+                    id="flowerTool"
+                    class="tool">
+                    🌸 Flower
+                </button>
+
+            </div>
 
         </div>
 
 
-        <!-- BRUSH -->
+        <!-- BRUSH SIZE -->
+        <div class="control-section brush-section">
 
-        <label class="brushControl">
+            <div class="brush-label">
+                <span>Size</span>
 
-            Brush
+                <strong id="brushValue">
+                    8
+                </strong>
+            </div>
 
             <input
                 type="range"
                 id="brushSize"
                 min="2"
                 max="40"
-                value="8"
-            >
+                value="8">
 
-            <span id="brushValue">8</span>
-
-        </label>
+        </div>
 
 
         <!-- ACTIONS -->
+        <div class="control-section">
 
-        <div class="actions">
+            <div class="section-title">
+                ⚡ Actions
+            </div>
 
-            <button id="undoBtn">
-                ↩️ Undo
-            </button>
+            <div class="actions">
 
-            <button id="redoBtn">
-                ↪️ Redo
-            </button>
+                <button id="undoBtn">
+                    ↩ Undo
+                </button>
 
-            <button id="clearBtn">
-                🗑️ Clear
-            </button>
+                <button id="redoBtn">
+                    ↪ Redo
+                </button>
 
-            <button id="saveBtn">
-                💾 Save
-            </button>
+                <button id="clearBtn">
+                    🗑 Clear
+                </button>
 
+                <button id="saveBtn">
+                    💾 Save
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HELP -->
+    <div class="help">
+
+        <div>
+            ☝️ <strong>Draw</strong>
+        </div>
+
+        <div>
+            ✌️ <strong>Erase</strong>
+        </div>
+
+        <div>
+            🖐️ <strong>Pause</strong>
+        </div>
+
+        <div>
+            <kbd>Ctrl</kbd> + <kbd>Z</kbd>
+            Undo
         </div>
 
     </div>
@@ -152,7 +246,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 
 
-<!-- OUR CODE -->
+<!-- YOUR SCRIPT -->
 
 <script src="script.js"></script>
 
