@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Air Canvas ✦</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header>
+        <h1>✦ Air Canvas</h1>
+        <p>Draw in the air with your hand</p>
+    </header>
+
+    <main class="stage">
+
+        <video id="video" autoplay playsinline></video>
+
+        <canvas id="drawCanvas"></canvas>
+        <canvas id="cursorCanvas"></canvas>
+
+        <div id="message">Starting camera...</div>
+
+        <div class="hud">
+
+            <div id="handStatus">
+                <span class="dot red"></span>
+                No Hand
+            </div>
+
+            <div id="toolStatus">
+                ✦ Pen
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <div class="controls">
+
+        <!-- COLORS -->
+
+        <div class="palette">
+
+            <button class="color active"
+                data-color="#ff3b30"
+                style="background:#ff3b30;"></button>
+
+            <button class="color"
+                data-color="#ff9500"
+                style="background:#ff9500;"></button>
+
+            <button class="color"
+                data-color="#ffcc00"
+                style="background:#ffcc00;"></button>
+
+            <button class="color"
+                data-color="#34c759"
+                style="background:#34c759;"></button>
+
+            <button class="color"
+                data-color="#007aff"
+                style="background:#007aff;"></button>
+
+            <button class="color"
+                data-color="#af52de"
+                style="background:#af52de;"></button>
+
+            <button class="color"
+                data-color="#ff2d55"
+                style="background:#ff2d55;"></button>
+
+            <button class="color"
+                data-color="#ffffff"
+                style="background:#ffffff;"></button>
+
+        </div>
+
+
+        <!-- TOOLS -->
+
+        <div class="tools">
+
+            <button id="penTool" class="tool active">
+                ✦ Pen
+            </button>
+
+            <button id="flowerTool" class="tool">
+                🌸 Flower
+            </button>
+
+        </div>
+
+
+        <!-- BRUSH -->
+
+        <label class="brushControl">
+
+            Brush
+
+            <input
+                type="range"
+                id="brushSize"
+                min="2"
+                max="40"
+                value="8"
+            >
+
+            <span id="brushValue">8</span>
+
+        </label>
+
+
+        <!-- ACTIONS -->
+
+        <div class="actions">
+
+            <button id="undoBtn">
+                ↩️ Undo
+            </button>
+
+            <button id="redoBtn">
+                ↪️ Redo
+            </button>
+
+            <button id="clearBtn">
+                🗑️ Clear
+            </button>
+
+            <button id="saveBtn">
+                💾 Save
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MEDIAPIPE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+
+<!-- OUR CODE -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
